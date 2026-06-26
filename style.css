@@ -1,0 +1,94 @@
+/* ============================================
+       CUSTOM STYLES & ANIMATIONS
+       ============================================ */
+
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Hero gradient overlay */
+    .hero-gradient {
+      background: linear-gradient(135deg, #1E3A8A 0%, #172554 50%, #0F1D3D 100%);
+    }
+
+    /* Card hover lift */
+    .card-lift {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -12px rgba(30, 58, 138, 0.15);
+    }
+
+    /* Service card overlay */
+    .service-card-overlay {
+      background: linear-gradient(180deg, transparent 0%, rgba(15, 29, 61, 0.92) 100%);
+      transition: opacity 0.4s ease;
+    }
+
+    /* Floating animation for badge */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Fade in on scroll (used by Intersection Observer) */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger children animation */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    .stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+
+    /* Pulse glow on CTA */
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4); }
+      50% { box-shadow: 0 0 0 12px rgba(22, 163, 74, 0); }
+    }
+    .cta-pulse {
+      animation: pulse-glow 2.5s infinite;
+    }
+
+    /* Testimonial star color */
+    .star-gold { color: #FBBF24; }
+
+    /* Mobile nav overlay */
+    .mobile-nav-overlay {
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    /* Counter animation number */
+    .counter-number {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Subtle grid pattern */
+    .grid-pattern {
+      background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #F3F4F6; }
+    ::-webkit-scrollbar-thumb { background: #1E3A8A; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #172554; }
